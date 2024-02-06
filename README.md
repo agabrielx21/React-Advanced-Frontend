@@ -1,1 +1,1 @@
-# React-Advanced-Frontend
+Project - Advanced Frontend Course
