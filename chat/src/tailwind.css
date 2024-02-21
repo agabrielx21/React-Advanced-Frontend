@@ -1,0 +1,11 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.delay {
+    @apply transition-all ease-in duration-75;
+  }
+
+.delay-slower {
+    @apply transition-all ease-in duration-100;
+  }
