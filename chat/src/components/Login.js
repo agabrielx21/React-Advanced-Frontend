@@ -12,10 +12,9 @@ function Login() {
    try {
     await login(email, password);
     navigate('/');
-    console.log('m-am logat.');
+    console.log('Logged In.');
    } catch(error) {
       console.log(error.message);
-      console.log(email);
    }
   };
 

@@ -1,9 +1,6 @@
-// Dashboard.js
 import React, { useState } from "react";
-import { Card, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import '../tailwind.css';
 
 export default function Dashboard() {
   const [error, setError] = useState("");
@@ -11,14 +8,11 @@ export default function Dashboard() {
   const navigate = useNavigate();
 
   async function handleLogout() {
-    setError("");
-
     try {
-      localStorage.clear();
       await logout();
       navigate("/login");
     } catch {
-      setError("Failed to log out");
+      console.log("Failed to log out");
     }
   }
 
