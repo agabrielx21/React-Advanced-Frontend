@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react"
 import { auth } from "../firebase"
+import firebase from "firebase/compat/app";
 
 export const AuthContext = React.createContext()
 
@@ -15,8 +16,18 @@ export function AuthProvider({ children }) {
     return auth.createUserWithEmailAndPassword(email, password)
   }
 
-  function login(email, password) {
+  function emailLogin(email, password) {
     return auth.signInWithEmailAndPassword(email, password)
+  }
+
+  function githubLogin() {
+    const provider = new firebase.auth.GithubAuthProvider();
+    return auth.signInWithPopup(provider)
+  }
+
+  function googleLogin(){
+    const provider = new firebase.auth.GoogleAuthProvider();
+    return auth.signInWithPopup(provider)
   }
 
   function logout() {
@@ -46,7 +57,9 @@ export function AuthProvider({ children }) {
 
   const value = {
     currentUser,
-    login,
+    emailLogin,
+    githubLogin,
+    googleLogin,
     signup,
     logout,
     resetPassword,
