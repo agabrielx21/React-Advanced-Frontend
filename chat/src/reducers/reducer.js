@@ -2,9 +2,10 @@ const actionTypes = {
     UPDATE_TIME_SINCE_LOGIN: 'UPDATE_TIME_SINCE_LOGIN'
   };
   
-  const initialState = {
+
+const initialState = {
     timeSinceLogin: 0
-  };
+};
   
   const reducer = (state = initialState, action) => {
     switch (action.type) {

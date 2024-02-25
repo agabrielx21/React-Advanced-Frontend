@@ -30,6 +30,7 @@ export function useTimer() {
     return () => {
       stopTimer(); 
     };
+    
   }, [currentUser, dispatch]); 
 
 }
