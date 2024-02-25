@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react"
 import { auth } from "../firebase"
 import firebase from "firebase/compat/app";
-import { useTimer } from '../actions/updateLoginState';
+import { useTimer } from '../redux/updateLoginState';
 
 export const AuthContext = React.createContext()
 
