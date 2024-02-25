@@ -2,6 +2,16 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+  .no-scrollbar {
+      -ms-overflow-style: none; 
+      scrollbar-width: none;  /* Firefox */
+}
+}
+
 .delay {
     @apply transition-all ease-in duration-75;
   }
@@ -9,3 +19,25 @@
 .delay-slower {
     @apply transition-all ease-in duration-100;
   }
+
+  .message-container {
+    border-radius: 20px 20px 20px 0;
+    padding: 15px;
+    color: #1c2c4c;
+    width: max-content;
+    max-width: calc(100% - 50px);
+    border: 2px solid black;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+  .message-container.right {
+    margin-left: auto;
+    border-radius: 20px 20px 0 20px;
+    background-color: #fff;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+ 
+
+
+ 

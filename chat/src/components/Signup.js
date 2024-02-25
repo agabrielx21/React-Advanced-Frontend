@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import Card from './Card';
 
 export default function Signup() {
   const emailRef = useRef();
@@ -31,9 +32,10 @@ export default function Signup() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-between py-12 h-screen gap-3">
-      <div className="flex flex-col justify-center items-center h-full bg-royal-100 w-1/3 rounded-lg shadow-lg p-8 font-mono text-royal-700">
-        <form onSubmit={handleSubmit} className="flex flex-col w-full gap-4">
+    <div>
+      <Card>
+      {error && <div className="text-red-500 text-center mb-4">{error}</div>}
+      <form onSubmit={handleSubmit} className="flex flex-col w-full gap-4">
           <input
             type="email"
             ref={emailRef}
@@ -63,7 +65,8 @@ export default function Signup() {
             Sign Up
           </button>
         </form>
-      </div>
+    </Card>
+        
       <div className="w-100 text-center mt-2 font-mono">
           Already have an account?{' '}
           <Link to="/login">
@@ -76,5 +79,6 @@ export default function Signup() {
           </Link>
         </div>
     </div>
+
   );
 }
